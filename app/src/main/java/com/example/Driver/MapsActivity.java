@@ -38,8 +38,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Location mLastLocation;
     LocationRequest mLocationRequest;
     private Switch mWorkingSwitch;
-    private LatLng hosry =new LatLng(29.972701, 30.943892);
-    private LatLng mall_of_arabia = new LatLng(30.008765, 30.974115);
+   // private LatLng hosry =new LatLng(29.972701, 30.943892);
+    //private LatLng mall_of_arabia = new LatLng(30.008765, 30.974115);
 
 
 
@@ -73,8 +73,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         buildGoogleApiClient();
-        mMap.addMarker(new MarkerOptions().position(hosry).title("hosry"));
-        mMap.addMarker(new MarkerOptions().position(mall_of_arabia).title("mall of atabia"));
+        //+mMap.addMarker(new MarkerOptions().position(hosry).title("hosry"));
+      //  mMap.addMarker(new MarkerOptions().position(mall_of_arabia).title("mall of atabia"));
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             return ;
@@ -127,6 +127,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,5));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,11));
     }
 }
