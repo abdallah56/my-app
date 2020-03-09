@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "551145388575",
+    "firebase_url": "https://trim-heaven-269115.firebaseio.com",
+    "project_id": "trim-heaven-269115",
+    "storage_bucket": "trim-heaven-269115.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551145388575:android:8b22b20b6664cd7678b32a",
+        "android_client_info": {
+          "package_name": "com.example.Driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551145388575-nfmmbok78m84v0mbq2ujascqcsh3thpm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.Driver",
+            "certificate_hash": "330bc30da3f3c310fa5d2f9fce86ae51835a35e9"
+          }
+        },
+        {
+          "client_id": "551145388575-psqk9v8nhc7vnirpec5frtmonf3vf7f2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoBYPn3f7pT_ct6SJnKtlgCb7Fa6urAFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "551145388575-psqk9v8nhc7vnirpec5frtmonf3vf7f2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
