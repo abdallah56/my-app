@@ -39,7 +39,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Switch mWorkingSwitch;
     private LatLng hosry =new LatLng(29.972701, 30.943892);
     private LatLng mall_of_arabia = new LatLng(30.008765, 30.974115);
-    private static final int LOCATION_REQUEST = 500;
+    private static final int LOCATION_REQUEST =500;
 
 
 
