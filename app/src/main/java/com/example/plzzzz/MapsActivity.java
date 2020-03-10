@@ -1,4 +1,4 @@
-package com.example.Driver;
+package com.example.plzzzz;
 
 import android.Manifest;
 import android.content.Intent;
@@ -24,7 +24,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
@@ -38,7 +37,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Location mLastLocation;
     LocationRequest mLocationRequest;
     private Switch mWorkingSwitch;
-
+    private LatLng hosry =new LatLng(29.972701, 30.943892);
+    private LatLng mall_of_arabia = new LatLng(30.008765, 30.974115);
+    private static final int LOCATION_REQUEST = 500;
 
 
 
@@ -72,12 +73,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         buildGoogleApiClient();
-        
+
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST);
+
 
             return ;
         }
         mMap.setMyLocationEnabled(true);
+        mMap.addMarker(new MarkerOptions().position(hosry).title("hosry"));
+        mMap.addMarker(new MarkerOptions().position(mall_of_arabia).title("mall of atabia"));
     }
     protected synchronized void buildGoogleApiClient (){
         mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -91,8 +96,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(1000);
-        mLocationRequest.setFastestInterval(1000);
+        mLocationRequest.setInterval(10000);
+        mLocationRequest.setFastestInterval(10000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
@@ -117,6 +122,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
     @Override
     public void onLocationChanged(Location location) {
+
         mLastLocation = location;
 
         String msg = "Updated Location: " +
@@ -124,7 +130,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Double.toString(location.getLongitude());
 
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+
         LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,11));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
     }
-}
+    }
